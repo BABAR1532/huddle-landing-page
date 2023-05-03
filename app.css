@@ -1,0 +1,178 @@
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+    color-scheme: dark light;
+}
+
+/* min body height */
+
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* My code from here */
+
+ * {
+      /* Colors */
+     --Violet: hsl(257, 40%, 49%);
+     --Soft-Magenta: hsl(300, 69%, 71%);
+   }
+
+ body{
+     background-image: url("images/bg-desktop.svg");
+     background-repeat: no-repeat;
+     background-color: var(--Violet);
+     overflow: visible;
+     min-width: 90em;
+ }
+
+ .container {
+     display: grid;
+     height: 100vh;
+     margin: 0 auto;
+     grid-template-columns: repeat(2,1fr);
+     width: clamp( 82.5em,90%,90%);
+ }
+
+ .container__image {
+     display: flex;
+     flex-direction: column;
+ }
+ .image__logo{
+     width:  12em;
+     padding: 3.5em 0 3.5em 0 ;
+ }
+
+ .container__content {
+    padding: 0 0 0 5em;
+     align-self: center;
+ }
+
+ .content__heading{
+     font-size: 2em;
+     line-height: 1.5;
+     font-family: Poppins,sans-serif;
+     font-weight: 600;
+     padding: 0 3.8em 0.5em 0;
+     color: white;
+ }
+
+ .content__description {
+     font-size: 0.999em;
+     padding: 0 2em 1.8em 0;
+     line-height: 1.5;
+     color:white;
+     font-family: Open Sans,sans-serif;
+ }
+
+ .content__register-button{
+     padding:0.79em 3.5em;
+     border-radius: 2em;
+     box-shadow:  #3c3939 0px 5px 5px;
+     font-family: Open Sans,sans-serif;
+     border: none;
+     color: var(--Violet);
+     cursor: pointer;
+ }
+
+.content__button--active:hover{
+    color: white;
+    background-color: var(--Soft-Magenta);
+}
+
+ .container__footer{
+     display: flex;
+     justify-content: end;
+     margin: 1.5em 0 0 0 ;
+     gap: 0.8em;
+     grid-column: 1 / span 2;
+ }
+
+.footer__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 1.59px solid white;
+    cursor: pointer;
+}
+
+/* Adding pseudo class for hovering effect */
+.footer__icon:hover{
+    color: var(--Soft-Magenta);
+    border: 1.59px solid var(--Soft-Magenta);
+}
+
+/* Mobile design */
+
+ @media(width <= 700px) {
+
+      body{
+          background-image: url("images/bg-mobile.svg");
+          background-repeat: no-repeat;
+          min-width: 0;
+      }
+
+    .image__logo {
+        width: 9.5em;
+    }
+
+     .container{
+         grid-template-columns: repeat(1,1fr);
+         width: 90%;
+     }
+
+     .container__content {
+         padding: 2.9em 0 0 0;
+         text-align: center;
+     }
+
+     .content__heading {
+         padding: 0 0 1em 0;
+         font-size: 1.5em;
+     }
+
+      .content__register-button {
+          padding:0.70em 5.5em;
+      }
+
+      .container__footer {
+          grid-column: 1 / 2 ;
+          justify-content: center;
+          padding: 2.5em 0;
+      }
+ }
+
+ /* The end */
+
+
+
+
